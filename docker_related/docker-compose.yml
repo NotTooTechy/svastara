@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+ worker: 
+   container_name: worker11
+   image: syslogng:v4
+   hostname: worker11
+   working_dir: /home/worker1/SREprivate
+   ports:
+     - 514
+   command: sh -c "python logger1.py &&
+                  ./START"
+
